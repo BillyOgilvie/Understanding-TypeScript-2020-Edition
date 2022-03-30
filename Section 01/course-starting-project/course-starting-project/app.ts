@@ -1,12 +1,30 @@
-function add(n1: number, n2: number, showResult: boolean, phrase = ''): number {
-  const result = n1 + n2;
-  if (showResult) console.log(phrase + result);
-  else return result;
+function Logger(logString: string) {
+  return function (constructor: Function) {
+    console.log(logString);
+    console.log(constructor);
+  };
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPharse = 'Result is: ';
+function withTemplate(template: string, hookId: string) {
+  return function (constructor: any) {
+    const hookElement = document.getElementById(hookId);
+    const p = new constructor();
+    if (hookElement) {
+      hookElement.innerHTML = template;
+      hookElement.querySelector('h1')!.textContent = p.name;
+    }
+  };
+}
 
-add(number1, number2, printResult, resultPharse);
+@withTemplate('<h1>My Person Object</h1>', 'app')
+class Person {
+  name = 'Max';
+
+  constructor() {
+    console.log('Creating person object');
+  }
+}
+
+const pers = new Person();
+
+console.log(pers);
