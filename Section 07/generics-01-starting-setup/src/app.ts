@@ -38,3 +38,68 @@ function countAndDescribe<T extends Lengty>(element: T): [T, string] {
 console.log(countAndDescribe('Hi there!'));
 console.log(countAndDescribe(['Sports', 'Cooking']));
 console.log(countAndDescribe(''));
+
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return 'Value: ' + obj[key];
+}
+
+extractAndConvert({ name: 'Max', age: 30 }, 'name');
+extractAndConvert({ name: 'Max', age: 30 }, 'age');
+
+class DataStorage<T extends string | number | boolean> {
+  private data: T[] = [];
+
+  addItem(item: T) {
+    this.data.push(item);
+  }
+
+  removeItem(item: T) {
+    if (this.data.indexOf(item) === -1) {
+      return;
+    }
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
+}
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem('max');
+textStorage.addItem('manu');
+textStorage.removeItem('max');
+console.log(textStorage.getItems());
+
+const nuberStorage = new DataStorage<number>();
+
+// const objStorage = new DataStorage<object>();
+// const maxObject = { name: 'Max' };
+// objStorage.addItem(maxObject);
+// objStorage.addItem({ name: 'Manu' });
+// objStorage.removeItem(maxObject);
+// console.log(objStorage.getItems());
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;
+}
+
+const names: Readonly<string[]> = ['Max', 'Anna'];
+// names.push('Manu');
