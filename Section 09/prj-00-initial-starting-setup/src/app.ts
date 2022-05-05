@@ -1,1 +1,6 @@
-// Code goes here!
+class ProjectInput {
+  constructor() {
+    this.templateElement;
+    this.hostElement;
+  }
+}
