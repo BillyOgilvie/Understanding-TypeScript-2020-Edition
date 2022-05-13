@@ -84,6 +84,7 @@ button:active {
 }
 
 .projects ul {
+  user-select: none;
   list-style: none;
   margin: 0;
   padding: 1rem;
@@ -93,6 +94,7 @@ button:active {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
   padding: 1rem;
   margin: 1rem;
+  background-color: #fff;
 }
 
 .projects li h2 {
