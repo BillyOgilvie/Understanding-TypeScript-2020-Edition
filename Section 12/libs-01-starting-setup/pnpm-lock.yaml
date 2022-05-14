@@ -2,7 +2,9 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/lodash': ^4.14.182
+  class-transformer: ^0.5.1
   lodash: ^4.17.21
+  reflect-metadata: ^0.1.13
   ts-loader: ^9.3.0
   typescript: ^4.6.4
   webpack: ^5.72.1
@@ -18,7 +20,9 @@ dependencies:
 
 devDependencies:
   '@types/lodash': 4.14.182
+  class-transformer: 0.5.1
   lodash: 4.17.21
+  reflect-metadata: 0.1.13
 
 packages:
 
@@ -510,6 +514,10 @@ packages:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
     engines: {node: '>=6.0'}
     dev: false
+
+  /class-transformer/0.5.1:
+    resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
+    dev: true
 
   /clone-deep/4.0.1:
     resolution: {integrity: sha512-neHB9xuzh/wk0dIHweyAXv2aPGZIVk3pLMe+/RNzINf17fe0OG96QroktYAUm7SM1PBnzTabaLboqqxDyMU+SQ==}
@@ -1502,6 +1510,10 @@ packages:
     dependencies:
       resolve: 1.22.0
     dev: false
+
+  /reflect-metadata/0.1.13:
+    resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
+    dev: true
 
   /require-from-string/2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
